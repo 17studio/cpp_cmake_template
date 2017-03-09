@@ -8,11 +8,13 @@ set(LIB_LIST)
 # gtest
 find_path(GTEST_INCLUDE_DIRS NAMES gtest.h  HINTS "../deps/googletest/googletest/include/gtest")
 find_library(GTEST_LIBRARIES NAMES gtest_main HINTS "../lib")
-if (GTEST_INCLUDE_DIRS AND GTEST_LIBRARIES)
+if (GTEST_INCLUDE_DIRS)
     include_directories("${GTEST_INCLUDE_DIRS}")
-    link_directories("${GTEST_LIBRARIES}")
-    list(APPEND LIB_LIST gtest)
-    list(APPEND LIB_LIST gtest_main)
+    if(GTEST_LIBRARIES)
+        link_directories("${GTEST_LIBRARIES}")
+        list(APPEND LIB_LIST gtest)
+        list(APPEND LIB_LIST gtest_main)
+    endif()
 endif()
 
 # application
