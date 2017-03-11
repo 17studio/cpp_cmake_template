@@ -1,11 +1,10 @@
 cmake_minimum_required (VERSION 2.8)
 project (unittest)
 
-add_subdirectory(../deps/googletest lib) # generate deps library
-
 set(LIB_LIST)
 
 # gtest
+add_subdirectory(../deps/googletest lib) # generate deps library
 find_path(GTEST_INCLUDE_DIRS NAMES gtest.h  HINTS "../deps/googletest/googletest/include/gtest")
 find_library(GTEST_LIBRARIES NAMES gtest_main HINTS "../lib")
 if (GTEST_INCLUDE_DIRS)

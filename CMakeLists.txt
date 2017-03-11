@@ -27,8 +27,8 @@ add_executable(main ${DIR_SRCS} ${DIR_MAINS})
 TARGET_LINK_LIBRARIES(main ${LIB_LIST})
 
 # library
-#ADD_LIBRARY(libwebsocket STATIC ${DIR_SRCS})
-#TARGET_LINK_LIBRARIES(libwebsocket ${LIB_LIST})
+ADD_LIBRARY(websocket STATIC ${DIR_SRCS})
+TARGET_LINK_LIBRARIES(websocket ${LIB_LIST})
 
 # cpplint
 file(GLOB_RECURSE ALL_CHECK_FILES "include/*.h" "src/*.cpp" "main/*.cpp")
