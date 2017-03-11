@@ -14,8 +14,7 @@ find_path(LIBUV_INCLUDE_DIRS NAMES uv.h)
 find_library(LIBUV_LIBRARIES NAMES uv)
 if (LIBUV_INCLUDE_DIRS AND LIBUV_LIBRARIES)
     include_directories("${LIBUV_INCLUDE_DIRS}")
-    link_directories("${LIBUV_LIBRARIES}")
-    list(APPEND LIB_LIST uv)
+    list(APPEND LIB_LIST ${LIBUV_LIBRARIES})
 endif()
 
 # application
